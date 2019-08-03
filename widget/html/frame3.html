@@ -1,535 +1,177 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>福利</title>
-    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="../css/auislide.css" />
-    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-    <style>
-        .empty{ text-align: center; padding: 120px 0; }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
+
 <body>
-  <div id="aui-slide"  class="fx-box">
-    <div id="slidebox" class="aui-slide-wrap" style="margin: 10px;border-radius:0.5rem;box-shadow:0.1rem 0.1rem 0.4rem rgba(99, 99, 99, 0.3);" >
-
-                      <!--顶部横幅未加载完成时的提示-->
-                        <img id="bpic" src="../image/yujiazai.png"  onClick="UnloadedCompleted()">
-                      <!--顶部横幅未加载完成时的提示-->
-
+    <img src="../image/1.png" style="width:100%;height:200px;" alt="">
+    <div class="content">
+        <span class="content-font">推荐视频</span>
+    </div>
+    <span tapmode="hover"  tapmode onclick="fn()">play</span>
+    <!-- 视频列表 -->
+    <!-- <div class="hot" id="tuijian">
 
     </div>
-    <div class="aui-slide-page-wrap"><!--分页容器--></div>
-  </div>
-
-  <div class="list-title">
-    <div class="list-title-l">
-      <span style="color:#585858;font-size: 0.7rem"><i class="iconfont icon-zuirehotchunse" style="color:#ff7600;font-size: 0.8rem"></i>福利推荐</span>
-    </div>
-
-  </div>
-
-
-  <section class="aui-grid aui-margin-b-15">
-      <div class="aui-row" id="fl_list">
-
-        <!--VIP 观影区未加载完成时的提示-->
-
-
-
-            <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-            <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-            <div class="aui-grid-label">爱奇艺</div>
-          </div>
-
-          <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-          <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-          <div class="aui-grid-label">腾讯视频</div>
-          </div>
-
-          <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-          <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-          <div class="aui-grid-label">优酷视频</div>
-          </div>
-
-          <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-          <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-          <div class="aui-grid-label">搜狐视频</div>
-          </div>
-
-          <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-          <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-          <div class="aui-grid-label">芒果TV</div>
-          </div>
-
-          <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-          <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-          <div class="aui-grid-label">PPTV</div>
-          </div>
-
-          <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-          <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-          <div class="aui-grid-label">暴风影音</div>
-          </div>
-
-          <div class="aui-col-xs-3 pt-list" tapmode onClick="UnloadedCompleted()">
-          <i class="aui-iconfont"><img src="../image/app/ico_loading.gif"/></i>
-          <div class="aui-grid-label">M1905</div>
-          </div>
-
-
-        <!--VIP 观影区未加载完成时的提示-->
-
-
-      </div>
-
-  </section>
-
-
-
-  <div class="fx-box" id="guanggao">
-
-          <div  class="aui-slide-wrap" style="margin: 10px;border-radius:0.5rem;box-shadow:0.1rem 0.1rem 0.4rem rgba(99, 99, 99, 0.3);" >
-
-                            <!--顶部横幅未加载完成时的提示-->
-                              <img id="bpic" src="../image/yujiazai.png"  onClick="UnloadedCompleted()">
-                            <!--顶部横幅未加载完成时的提示-->
-
-          </div>
-
-
-
-
-          <div  class="aui-slide-wrap" style="margin: 10px;border-radius:0.5rem;box-shadow:0.1rem 0.1rem 0.4rem rgba(99, 99, 99, 0.3);" >
-
-                            <!--顶部横幅未加载完成时的提示-->
-                              <img id="bpic" src="../image/yujiazai.png"  onClick="UnloadedCompleted()">
-                            <!--顶部横幅未加载完成时的提示-->
-          </div>
-
-
-</div>
-
-
-
-
-
-
-  <div class="">
-
-  </div>
+    <input type="hidden"  id="dvd"> -->
 </body>
-<script type="text/x-dot-template" id="bannertpl">
-  {{~ it.data : value : index }}
-    <div class="aui-slide-node bg-dark" tapmode onclick="toBanner('{{= value. linkurl }}')">
-        <img src="http://v.tianzhutongcheng.com/{{= value. picurl }}" />
-    </div>
-  {{~}}
-</script>
-<script type="text/x-dot-template" id="flicotpl">
-  {{~ it.data : value : index }}
-  		<div class="aui-col-xs-3 pt-list" tapmode onclick="toBanner('{{= value. linkurl }}')">
-          <i class="aui-iconfont"><img src="http://v.tianzhutongcheng.com/{{= value. picurl }}"/></i>
-          <div class="aui-grid-label">{{= value. name }}</div>
-        </div>
+<style media="screen">
+    .content {
+        /*margin-top: 210px;*/
+        background: #f7f7f7;
+        width: 100%;
+        height: 40px;
+        /*margin: 10px auto;*/
+        text-align: center;
+    }
 
-  {{~}}
-</script>
-<script type="text/x-dot-template" id="guanggaotpl">
-  {{~ it.data : value : index }}
+    .content-font {
+        line-height: 40px;
+        font-weight: 400;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .hot {
+        margin: 10px auto;
+        width: 95%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .hotlist {
+        width: 49%;
+        height: 300rpx;
+        background: #fff;
+        padding: 10rpx;
+        margin-bottom: 20rpx;
+        text-align: center;
+    }
+
+    .hotlist-img {
+        width: 100%;
+        height: 125px;
+        margin: 2px 0;
+    }
+
+    .hotlist-font {
+        font-size: 13px;
+        color: #333;
+        width: 100%;
+        height: 25px;
+        line-height: 25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
 
 
-  <div  class="aui-slide-wrap" style="margin: 10px;border-radius:0.5rem;box-shadow:0.1rem 0.1rem 0.4rem rgba(99, 99, 99, 0.3);" >
-
-                      <img  src="http://v.tianzhutongcheng.com/{{= value. picurl }}"  tapmode onclick="toBanner('{{= value. linkurl }}')">
-
-  </div>
-
-  {{~}}
-</script>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/doT.js"></script>
 <script type="text/javascript" src="../script/auipullrefresh.js"></script>
 <script type="text/javascript" src="../script/auislide.js"></script>
-<script type="text/javascript" src="../script/auilazyload.js" ></script>
+<script type="text/javascript" src="../script/auilazyload.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+
+
 <script type="text/javascript">
 
-//alert(localStorage.getItem('fxpic1'));
-  var slide = new auiSlide({
-      container:document.getElementById("aui-slide"),
-      // "width":300,
-  //    "height":200,
-      "speed":300,
-      "pageShow":true,
-      "autoPlay": 5000,
-      "pageStyle":'dot',
-      "loop":true,
-      'dotPosition':'center',
+apiready = function(){
+
+   }
+
+function fn(){
+  var moviePlayer = api.require('moviePlayer');
+  moviePlayer.open({
+            rect:{
+            x: 0,
+            y: 0,
+            w:api.frameWidth,
+            h:300
+            },
+            styles:{
+            head:{
+            bg: 'rgba(161,161,161,0.5)',
+            height: 44,
+            y:20,
+            title:{
+            size:20,
+            color:'#fff',
+            width:40,
+            leftMargin:10
+            },
+            backSize: 30,
+            backImg:'widget://image/back.png',
+            customButtons:[{
+            w:30,
+            h:30,
+            rightMagin:10,
+            img:'widget://image/image/collect.png',
+            imgSelected:'fs://image/collectSelected.png',
+            }]},
+            foot:{
+            bg: 'rgba(0,0,0,0.5)',
+            height: 44,
+            palyBtn:{
+            size: 20,
+            playImg:'widget://image/play.png',
+            pauseImg:'widget://image/pause.png',
+            marginLeft:5
+            },
+            currentTimeLabel:{
+            textSize:14,
+            textColor:"#FFF",
+            textWidth: 43,
+            marginLeft:5
+            },
+            seekBar:{
+            sliderImg:'widget://image/circle.png',
+            sliderW : 20,
+            sliderH : 20,
+            progressColor: '#696969',
+            progressSelected: '#76EE00',
+            marginLeft:10,
+            marginRight:10
+            },
+            totalTimeLabel:{
+            textSize:14,
+            textColor:"#FFF",
+            textWidth: 43,
+            marginRight:5
+            },
+            fullscreenBtn:{
+            size:20,
+            verticalImg:'widget://image/vertical.png',
+            horizontalImg:'widget://image/horizontal.png',
+            }
+            } },
+             path:'http://baobab.wdjcdn.com/1455782903700jy.mp4',
+             autoPlay: true
+              },function(ret, err){
+                  if(ret){
+                      // alert(JSON.stringify(ret));
+                  // } else {
+                      // alert(JSON.stringify(err));
+                  }
+
   });
-  new auiLazyload({
-      errorImage:'../image/error-img.jpg'
-  });
-  var api_url = localStorage.getItem('api_url');
-  apiready = function(){
-
-
-
-
-    //下拉刷新
-        api.setCustomRefreshHeaderInfo({
-            bgColor : '#fff',
-             images: [
-                    'widget://image/app/xiala/1.png',
-                    'widget://image/app/xiala/2.png',
-                    'widget://image/app/xiala/3.png',
-                    'widget://image/app/xiala/4.png',
-                    'widget://image/app/xiala/5.png',
-                    'widget://image/app/xiala/6.png',
-                    'widget://image/app/xiala/7.png',
-                    'widget://image/app/xiala/8.png',
-                      ],
-                    tips: {
-                        pull: '你…你想干什么！你不要过来！',
-                        threshold: '讨厌 快放开我 非礼呀！',
-                        load: '急速影视 服务完美'
-                    }
-
-        }, function() {
-            //下拉刷新被触发，自动进入加载状态，使用 api.refreshHeaderLoadDone() 手动结束加载中状态
-            setTimeout(function(){
-        api.refreshHeaderLoadDone()
-            }, 50);
-        });
-        //下拉刷新
-
-
-
-
-//获取信息
-    api.parseTapmode();
-
-	getNav();
-  }
-
-
-
-//// ↑ ↑ ↑ ↑ ↑原方法  ↑ ↑ ↑ ↑ ↑////
-function imgUrl(url){
-
-
-
-      if (url == '') {
-
-
-        api.toast({
-            msg: '(#^.^#) 暂无详情'
-        });
-
-      }else {
-
-
-        //网络连接判断S
-
-
-                            api.ajax({
-                                url: api_url+'/login/login/banben.html',
-                                method: 'get'
-                            },function(ret, err){
-                                if (ret) {
-
-                                             //网络正常   跳转
-
-
-
-
-
-                                                   /*
-                                                   api.showProgress({
-                                                       title: 'VIP登录中',
-                                                       modal: false
-                                                   });
-                                             */
-                                             api.toast({
-                                                 msg: '加载中'
-                                             });
-
-
-
-                                             api.openWin({
-                                                 name: 'h5',
-                                                 url: './h5.html',
-                                                 pageParam: {
-                                                     url: url
-                                                 }
-                                             });
-
-
-
-
-
-                                } else {
-
-                                            //网络连接失败 进行提示
-                                            NetworkConnectionFailurePrompt();
-
-              }
-
-
-          });
-    //网络连接判断E
-
-      }
-
-
-
-}
-///////广告图片 和小图标广告 点击访问 方法    imgUrl   E   ///////
-
-
-
-///////访问轮播地址 方法    toBanner   S   ///////
-function toBanner(url){
-
-  if (url == '') {
-
-
-    api.toast({
-        msg: '(#^.^#) 暂无详情'
-    });
-
-  }else {
-
-
-    //网络连接判断S
-
-
-                        api.ajax({
-                            url: api_url+'/login/login/banben.html',
-                            method: 'get'
-                        },function(ret, err){
-                            if (ret) {
-
-                                         //网络正常   跳转
-
-
-
-
-
-                                               /*
-                                               api.showProgress({
-                                                   title: 'VIP登录中',
-                                                   modal: false
-                                               });
-                                         */
-                                         api.toast({
-                                             msg: '加载中'
-                                         });
-
-
-
-                                               api.openWin({
-                                                   name: 'h5',
-                                                   url: './h5.html',
-                                                   pageParam: {
-                                                       url: url
-                                                   }
-                                               });
-
-
-
-
-                            } else {
-
-                                        //网络连接失败 进行提示
-                                        NetworkConnectionFailurePrompt();
-
-          }
-
-
-      });
-//网络连接判断E
-
-  }
 }
 
-///////访问轮播地址 方法    toBanner   E   ///////
 
-
-////////会员项目打开方法  s  ////////
-  function openWin(name){
-    var time = localStorage.getItem('user_time');
-    var user_id = localStorage.getItem('user_id');
-    var username = localStorage.getItem('user_name');
-    var timestamp = Date.parse(new Date())/1000;
-    if (user_id!=0) {
-      api.alert({
-          title: '请先登录',
-          msg: '知道了',
-      });
-      return;
-    }
-
-    if (time > timestamp) {
-      api.openWin({
-          name: ''+name+'',
-          url: ''+name+'.html',
-          bounces:false,
-          delay: 300
-      });
-    }else if (time == -1) {
-      api.openWin({
-          name: ''+name+'',
-          url: ''+name+'.html',
-          bounces:false,
-          delay: 300
-      });
-    }else if (time < timestamp) {
-      alert('到期啦~官人先开个VIP哟');
-      api.openWin({
-          name: 'open_vip_win',
-          url: './open_vip_win.html',
-      });
-    }
-
-  }
-////////会员项目打开方法  E  ////////
-
-
-//////////////////////    幻灯轮播图获取  方法  banNer  S  //////////////////////
-  function banNer(){
-    var slide = new auiSlide({
-        container:document.getElementById("aui-slide"),
-        // "width":300,
-        "height":150,
-        "speed":300,
-        "pageShow":true,
-        "autoPlay": 5000,
-        "pageStyle":'dot',
-        "loop":true,
-        'dotPosition':'center',
-    });
-  }
-
-//////////////////////    幻灯轮播图获取  方法  banNer  E  //////////////////////
-
-
-
-//////////////////////    轮播图获取  方法  getNav  S  //////////////////////
-  function getNav(){
-    var flid = $api.byId('fl_list');
-    var fltpl = $api.byId('flicotpl');
-	var bannerid = $api.byId('slidebox');
-    var bannertpl = $api.byId('bannertpl');
-
-    var guanggaoid = $api.byId('guanggao');
-    var guanggaotpl = $api.byId('guanggaotpl');
-    api.ajax({
-        url: api_url+'/app/nav/fl?uid='+localStorage.getItem('user_id'),
-        method: 'get',
-    },function(ret, err){
-        if (ret) {
-          //渲染模板
-          var pagefn = doT.template(fltpl.text);
-          flid.innerHTML = pagefn(ret.tu);
-          var pagefn = doT.template(bannertpl.text);
-          bannerid.innerHTML = pagefn(ret.banner);
-          var pagefn = doT.template(guanggaotpl.text);
-          guanggaoid.innerHTML = pagefn(ret.guanggao);
-           banNer();
-//        alert( JSON.stringify( ret.banner ) );
-
-
-        } else {
-          /*
-            alert( '网络错误' );
-            api.hideProgress();
-            */
-        }
-    });
-  }
-
-//////////////////////    轮播图获取  方法  getNav  E  //////////////////////
-
-
-
-
-
-
-  //////////////////////   打开APP时 获取Banner和图标  方法    DataLoading    定时     S //////////////////////
-
-  //定时执行数据加载
-  var timer = setInterval(function(){
-      DataLoading();
-  },1000)
-
-  //判断是否服务器通信成功
-  function DataLoading() {
-
-    api.ajax({
-        url: api_url+'/login/login/banben.html',
-        method: 'get'
-    },function(ret, err){
-        if (ret) {
-
-          getNav();    //获取Nav
-          //alert( JSON.stringify( ret ) );
-/*  关闭提示
-          api.toast({
-              msg: '数据已更新',
-              duration: 1000
-          });
-*/
-
-clearInterval(timer); // 获取成功 清除定时器
-        } /*else {
-          api.toast({
-              msg: '数据获取失败 请检查网络',
-              duration: 1000
-          });
-
-            //alert( JSON.stringify( err ) );
-        }
-        */
-    });
-
-
-
-
-  }
-
-  //////////////////////   打开APP时 获取Banner和图标  方法    DataLoading    定时     E //////////////////////
-
-
-
-
-
-
-
-
-
-
-////////////未加载完成时点击按钮提示 方法   UnloadedCompleted   S   ////////////
-
-function UnloadedCompleted(){
-
-      api.toast({
-          msg: '加载失败 请检查网络是否顺畅'
-      });
-}
-
-////////////未加载完成时点击按钮提示 方法   UnloadedCompleted   E   ////////////
-
-
-////////////手动开始下拉刷新的加载状态 方法  fnRefreshHeaderLoading   S   ////////////
-    function fnRefreshHeaderLoading() {
-        api.refreshHeaderLoading();
-    };
-////////////手动开始下拉刷新的加载状态 方法  fnRefreshHeaderLoading   E   ////////////
 
 
 
@@ -537,6 +179,95 @@ function UnloadedCompleted(){
 
 
 
+<!-- <script>
+       var  videoPlayer
+       function getvideo(title,url){
+         document.getElementById('dvd').value = JSON.stringify({"title":title,"url":url});
+         fnPaly();
+       }
 
+
+    apiready = function() {
+         videoPlayer = api.require('videoPlayer');
+        api.ajax({
+            url: 'http://v.tianzhutongcheng.com/index/api/api_f.html',
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            data: {
+                body: {
+                    name: 'haha'
+                }
+            }
+        }, function(ret, err) {
+            var tuijian = $api.byId("tuijian")
+            if (ret) {
+                var html = '';
+                for (i = 0; i < ret.length; i++) {
+                    html +=
+                        `
+                <div class="hotlist" onclick="getvideo('${ret[i].title}','${ret[i].url}')">
+                    <img class="hotlist-img" src="${ret[i].pic}"></img>
+                    <span class="hotlist-font">${ret[i].title}</span>
+                </div>
+                `
+                }
+                $api.append(tuijian, html);
+            }
+        });
+    }
+    function fnPaly(){
+     var ret = JSON.parse($api.val($api.byId('dvd')));
+     var videoPlayer = api.require('videoPlayer');
+     videoPlayer.close();
+     videoPlayer.openPlay({
+       rect:{
+                x:0,
+                y:0,
+                w:380,
+                h:290,
+
+            },
+         texts: {
+             head: {
+                 title: ret.title,
+
+             }
+         },
+
+         styles: {
+             head: {
+                 bg: 'rgba(0.5,0.5,0.5,0.7)',
+                 height: 44,
+                 titleSize: 16,
+                 titleColor: '#fff',
+                 backSize: 20,
+                 backImg: 'widget://image/back.png',
+                 setSize: 20,
+                 setImg: 'widget://image/set.png'
+             },
+             foot:{
+               bg: 'rgba(161,161,161,0.5)',      //（可选项）字符串类型；底部导航条背景，支持#、rgb、rgba、img；默认：rgba(161,161,161,0.5)
+               height: 44,
+               playSize: 20,
+               otationSize:44,
+               verticalImg:'fs://img/vertical.png',
+               horizontalImg:'fs://img/horizontal.png', //（可选项）字符串类型；底部横竖屏切换按钮的背景图片，横屏状态下的切换按钮，要求本地路径（widget://、fs://）；默认：横屏按钮图标
+             },
+         },
+         path: ret.url,
+         autoPlay:true,
+         fixed:true,
+     },
+     function(ret, err) {
+
+         if (ret) {
+
+         }
+     });
+
+  }
+</script> -->
 
 </html>

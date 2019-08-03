@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" href="../css/zhibo.css">
+    <title>title</title>
+</head>
+
+<body>
+
+  <div class="content">
+      <span class="content-font">视频列表</span>
+  </div>
+    <div  class="hot" id="shipinlist">
+
+    </div>
+<input type="hidden" id="splist">
+
+</body>
+
+
+
+<style>
+.content {
+    background: #f7f7f7;
+    width: 100%;
+    height: 40px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.content-font {
+    line-height: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+}
+.hot {
+    margin: 10px auto;
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hotlist {
+    width: 49%;
+    height: 300rpx;
+    background: #fff;
+    padding: 10rpx;
+    margin-bottom: 20rpx;
+    text-align: center;
+}
+
+.hotlist-img {
+    width: 100%;
+    height: 125px;
+    margin: 2px 0;
+}
+
+.hotlist-font {
+    font-size: 13px;
+    color: #333;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</style>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/auipullrefresh.js"></script>
+<script type="text/javascript" src="../script/auislide.js"></script>
+<script type="text/javascript" src="../script/auilazyload.js"></script>
+
+<script>
+var videoPlayer;
+function getvideolist(title,url){
+  document.getElementById('splist').value = JSON.stringify({"title":title,"url":url});
+  fnOpen();
+}
+    apiready = function() {
+        var id = api.pageParam.id;
+        videoPlayer = api.require('videoPlayer');
+      api.ajax({
+          url: 'http://v.tianzhutongcheng.com/index/api/api_b.html?id='+id,
+          method: 'post',
+          data: {}
+      },function(ret, err){
+        var shipinlist = $api.byId('shipinlist');
+          var html = '';
+          for(var i = 0; i < ret.length; i++){
+            html +=`
+            <div class="hotlist" onclick="getvideolist('${ret[i].title}','${ret[i].url}')">
+                <img class="hotlist-img" src="${ret[i].pic}"></img>
+                <span class="hotlist-font">${ret[i].title}</span>
+            </div>
+            `
+          }
+          $api.append(shipinlist, html);
+      });
+
+
+      // api.ajax({
+      //     url: 'http://v.tianzhutongcheng.com/index/api/api_e.html?id='+id,
+      //     method: 'get',
+      //     data: {},
+      // }, function(ret, err) {
+      //     var shipinlist = $api.byId('shipinlist')
+      //     if (ret) {
+      //             var html = `<img class="hotlist-img" src="${ret.pic}"></img>`;
+      //             document.getElementById('splist').value = JSON.stringify(ret);
+      //             fnOpen();
+      //             $api.append(shipinlist, html);
+      //     }
+      // });
+
+    }
+    function fnOpen(){
+     var ret = JSON.parse($api.val($api.byId('splist')));
+     var videoPlayer = api.require('videoPlayer');
+     videoPlayer.close();
+     videoPlayer.open({
+       rect:{
+         x: 0,   //（可选项）数字类型；模块左上角的 x 坐标（相对于所属的 Window 或 Frame）；默认：0
+y: 0,   //（可选项）数字类型；模块左上角的 y 坐标（相对于所属的 Window 或 Frame）；默认：0
+w: 320, //（可选项）数字类型；模块的宽度；默认：所属的 Window 或 Frame 的宽度
+h: 300  //（可选项）数字类型；模块的高度；默认：w的3/4
+            },
+        //  texts: {
+        //      head: {
+        //          title: ret.title
+        //      }
+        //  },
+        //  styles: {
+        //      head: {
+        //          bg: 'rgba(0.5,0.5,0.5,0.7)',
+        //          height: 44,
+        //          titleSize: 16,
+        //          titleColor: '#fff',
+        //          backSize: 20,
+        //          backImg: 'widget://image/back.png',
+        //          setSize: 20,
+        //          setImg: 'widget://image/set.png'
+        //      },
+        //  },
+         path: ret.url,
+         autoPlay:true
+     },
+     function(ret, err) {
+
+         if (ret) {
+
+         }
+     });
+
+ }
+</script>
+
+</html>
